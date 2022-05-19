@@ -14,24 +14,24 @@ int _printf(const char *format, ...)
 	unsigned int i = 0, j, num_of_char = 0;
 	va_list arg;
 	char *string;
-	const	char *traverse;
 
 	if (!format)
 		return (-1);
 
 	va_start(arg, format);
-	for (traverse = format; traverse[i] != '\0'; i++)
+	for (; format[i] != '\0'; i++)
 	{
-		while (traverse[i] != '%')
+		while (format[i] != '%')
 		{
-			if (traverse[i] == '\0')
+			if (format[i] == '\0')
 				return (num_of_char);
-			num_of_char += _putchar(traverse[i]);
+			num_of_char += _putchar(format[i]);
 			i++;
 		}
+
 		i++;
 
-		switch (traverse[i])
+		switch (format[i])
 		{
 			case 'c':
 				j = va_arg(arg, int);
@@ -41,6 +41,7 @@ int _printf(const char *format, ...)
 			case 's':
 				string = va_arg(arg, char*);
 				num_of_char += print_str(string);
+				break;
 		}
 	}
 
@@ -58,15 +59,15 @@ int _printf(const char *format, ...)
 int print_str(char *str)
 {
 
-	int num_of_char = 0;
+	int i = 0, num_of_char = 0;
 	char *np;
 
 	if (str)
 	{
-		while (*str)
+		while (str[i] != '\0')
 		{
-			num_of_char += _putchar(*str);
-			str++;
+			num_of_char += _putchar(str[i]);
+			i++;
 		}
 	}
 	else
