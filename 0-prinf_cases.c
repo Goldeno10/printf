@@ -8,8 +8,8 @@ int case_c(int i)
 {
 	int len = 0;
 
-	_putchar(i);
-	len++;
+	len = _putchar(i);
+
 
 	return (len);
 }
