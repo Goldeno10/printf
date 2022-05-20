@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 		if (*format != '%' || *++format == '%')
 		{
 				num_of_char += _putchar(*format);
-				format++;
 		}
 		else
 		{
@@ -39,11 +38,6 @@ int _printf(const char *format, ...)
 				case 's':
 					string = va_arg(arg, char*);
 					num_of_char += case_s(string);
-					break;
-
-				case '%':
-					j = va_arg(arg, int);
-					num_of_char += _putchar(37);
 					break;
 
 				case 'd':
@@ -85,11 +79,10 @@ int _printf(const char *format, ...)
 					num_of_char += case_S(string);
 					break;
 			}
-			format++;
 		}
+		format++;
 	}
 
 	va_end(arg);
 	return (num_of_char);
-
 }
