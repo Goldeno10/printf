@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
 *case_c - handle character printing
 *@i:chracter ASCII code
 *Return: An Int
 */
+
 int case_c(int i)
 {
 	int len = 0;
@@ -18,6 +20,7 @@ int case_c(int i)
 *@j:Digit to print
 *Return: An Integer
 */
+
 int case_d(int j)
 {
 	char *digits;
@@ -36,11 +39,13 @@ int case_d(int j)
 	}
 	return (len);
 }
+
 /**
 *case_i - handle integer printing
 *@j:Integer to print
 *Return: An Int
 */
+
 int case_i(int j)
 {
 	char *digits;
@@ -65,6 +70,7 @@ int case_i(int j)
 * @str: pointer to string
 * Return: number of characters printed
 */
+
 int case_s(char *str)
 {
 	int i = 0, num_of_char = 0;
@@ -85,11 +91,13 @@ int case_s(char *str)
 	}
 	return (num_of_char);
 }
+
 /**
 *case_x - Hexadeximal case
 *@i: input data
 *Return: An int
 */
+
 int case_x(u_int i)
 {
 	char *digits;
@@ -103,6 +111,7 @@ int case_x(u_int i)
 	}
 	return (len);
 }
+
 /**
 *case_o - Octal base case
 *@i: input data
@@ -129,6 +138,7 @@ int case_o(u_int i)
 *@i: input data
 *Return: An int
 */
+
 int case_X(u_int i)
 {
 	char *digits;
