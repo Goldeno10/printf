@@ -13,7 +13,7 @@ char *base_convert(u_int num, int base)
 	static char buffer[30];
 	char *ptr;
 
-	ptr = &buffer[29];
+	ptr = &buffer[21];
 	*ptr = '\0';
 
 	do

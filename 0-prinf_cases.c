@@ -8,11 +8,10 @@ int case_c(int i)
 {
 	int len = 0;
 
-	putchar(i);
+	_putchar(i);
 	len++;
 
 	return (len);
-
 }
 
 /**
@@ -21,23 +20,22 @@ int case_c(int i)
 *Return: An Integer
 */
 
-
-int case_d(int i)
+int case_d(int j)
 {
 	char *digits;
 	int len = 0;
 
-	if (i < 0)
+	if (j < 0)
 	{
-		i = -i;
-		putchar('-');
+		j = -j;
+		_putchar('-');
 	}
-	digits = base_convert(i, 10);
-	while (digits)
+	digits = base_convert(j, 10);
+	puts(digits);
+	while (digits[len] != '\0')
 	{
 		len++;
 	}
-	puts(digits);
 	return (len);
 }
 /**
@@ -45,41 +43,50 @@ int case_d(int i)
 *@i:Integer to print
 *Return: An Int
 */
-
-int case_i(int i)
+int case_i(int j)
 {
-	char *digits;
-	int len = 0;
+        char *digits;
+        int len = 0;
 
-	if (i < 0)
-	{
-		i = -i;
-		putchar('-');
-	}
-	digits = base_convert(i, 10);
-	while (digits)
-	{
-		len++;
-	}
-	puts(digits);
-	return (len);
+        if (j < 0)
+        {
+                j = -j;
+                _putchar('-');
+        }
+        digits = base_convert(j, 10);
+        puts(digits);
+        while (digits[len] != '\0')
+        {
+                len++;
+        }
+        return (len);
 }
 
 /**
-*case_c - handle String printing
-*@s: pointer to chararacters
-*Return: An Int
+* case_s - prints string
+* @str: pointer to string
+* Return: number of characters printed
 */
-
-int case_s(char *s)
+int case_s(char *str)
 {
-	int len = 0;
 
-	while(s)
-		len++;
+        int i = 0, num_of_char = 0;
+        char *np;
 
-	puts(s);
-	return (len);
+        if (str)
+        {
+                while (str[i] != '\0')
+                {
+                        num_of_char += _putchar(str[i]);
+                        i++;
+                }
+        }
+        else
+        {
+                        np = "(nil)";
+                        num_of_char += write(1, np, 5);
+        }
+        return (num_of_char);
 }
 /**
 *case_x - Hexadeximal case

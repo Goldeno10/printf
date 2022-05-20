@@ -4,7 +4,7 @@
 *@format: contain characters and flags to be printed
 *Reaturn: An Integer
 */
-int _printf(const char *format, ...)
+int _printf( char *format, ...)
 {
 	char *traverse;
 	u_int i;
@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list vlist;
 	va_start(vlist, format);
 
-	for (traverse = format; *traverse != '\0', traverse++)
+	for (*traverse = format; traverse != '\0', *traverse++)
 	{
 		while (*traverse != '℅')
 		{
