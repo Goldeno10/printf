@@ -11,7 +11,7 @@ typedef unsigned int u_int;
 
 char *base_convert(u_int, int);
 
-int _printf(char *format, ...);
+int _printf(const char *format, ...);
 
 int case_o(u_int i);
 int case_x(u_int i);

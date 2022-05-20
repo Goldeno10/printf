@@ -1,12 +1,10 @@
 #include "main.h"
 /**
-*
-*
-*
-*
-*
+*_printf - print charaters to the output stream
+*@format: contain characters and flags to be printed
+*Reaturn: An Integer
 */
-int _printf(char *format, ...)
+int _printf(const char *format, ...)
 {
 	char *traverse;
 	u_int i;

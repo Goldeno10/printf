@@ -1,8 +1,8 @@
 #include "main.h"
 /**
-*
-*
-*
+*case_c - handle character printing
+*@i:chracter ASCII code
+*Return: An Int
 */
 int case_c(int i)
 {
@@ -14,6 +14,13 @@ int case_c(int i)
 	return (len);
 
 }
+
+/**
+*case_c - handle base 10 digit printing
+*@i:Digit to print
+*Return: An Integer
+*/
+
 
 int case_d(int i)
 {
@@ -33,6 +40,11 @@ int case_d(int i)
 	puts(digits);
 	return (len);
 }
+/**
+*case_i - handle integer printing
+*@i:Integer to print
+*Return: An Int
+*/
 
 int case_i(int i)
 {
@@ -52,6 +64,12 @@ int case_i(int i)
 	puts(digits);
 	return (len);
 }
+
+/**
+*case_c - handle String printing
+*@s: pointer to chararacters
+*Return: An Int
+*/
 
 int case_s(char *s)
 {
