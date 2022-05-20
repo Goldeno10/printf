@@ -14,6 +14,8 @@ char *base_convert(u_int, int);
 char *base_CONVERT(u_int, int);
 int _printf(const char *format, ...);
 
+int case_S(char *str);
+
 int case_u(u_int);
 int case_b(u_int);
 int case_X(u_int);

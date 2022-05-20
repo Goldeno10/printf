@@ -1,4 +1,38 @@
 #include "main.h"
+/**
+*
+*
+*
+*/
+int case_S(char *str)
+{
+	int len = 0, c, x = 0;
+	char *code;
+
+	while (str[len] != '\0')
+	{
+		c = str[len];
+		if (c > 32 && c < 127)
+		{
+			_putchar(len);
+			len++;
+		}
+		else
+		{
+			code = base_CONVERT(c, 16);
+			while (x < 2)
+			{
+				_putchar(code[x]);
+				x++;
+			}
+			len++;
+		}
+	}
+	return (len + x);
+
+}
+
+
 
 /**
 *case_c - handle character printing

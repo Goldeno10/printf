@@ -72,6 +72,10 @@ int _printf(const char *format, ...)
 				j = va_arg(arg, u_int);
 				num_of_char += case_u(j);
 				break;
+			case 'S':
+				string = va_arg(arg, char *);
+				num_of_char += case_S(string);
+				break;
 		}
 	}
 
