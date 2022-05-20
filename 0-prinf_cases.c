@@ -43,21 +43,21 @@ int case_d(int j)
 */
 int case_i(int j)
 {
-        char *digits;
-        int len = 0;
+	char *digits;
+	int len = 0;
 
-        if (j < 0)
-        {
-                j = -j;
-                _putchar('-');
-        }
-        digits = base_convert(j, 10);
-        while (digits[len] != '\0')
-        {
+	if (j < 0)
+	{
+		j = -j;
+		_putchar('-');
+	}
+	digits = base_convert(j, 10);
+	while (digits[len] != '\0')
+	{
 		_putchar(digits[len]);
-                len++;
-        }
-        return (len);
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -67,24 +67,23 @@ int case_i(int j)
 */
 int case_s(char *str)
 {
+	int i = 0, num_of_char = 0;
+	char *np;
 
-        int i = 0, num_of_char = 0;
-        char *np;
-
-        if (str)
-        {
-                while (str[i] != '\0')
-                {
-                        num_of_char += _putchar(str[i]);
-                        i++;
-                }
-        }
-        else
-        {
-                        np = "(nil)";
-                        num_of_char += write(1, np, 5);
-        }
-        return (num_of_char);
+	if (str)
+	{
+		while (str[i] != '\0')
+		{
+			num_of_char += _putchar(str[i]);
+			i++;
+		}
+	}
+	else
+	{
+		np = "(nil)";
+		num_of_char += write(1, np, 5);
+	}
+	return (num_of_char);
 }
 /**
 *case_x - Hexadeximal case
