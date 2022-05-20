@@ -64,6 +64,14 @@ int _printf(const char *format, ...)
 				j = va_arg(arg, u_int);
 				num_of_char += case_X(j);
 				break;
+			case 'b':
+				j = va_arg(arg, u_int);
+				num_of_char += case_b(j);
+				break;
+			case 'u':
+				j = va_arg(arg, u_int);
+				num_of_char += case_u(j);
+				break;
 		}
 	}
 

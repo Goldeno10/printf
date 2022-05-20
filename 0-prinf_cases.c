@@ -152,3 +152,43 @@ int case_X(u_int i)
 	}
 	return (len);
 }
+
+/**
+*case_b - Hexadeximal case
+*@i: input data
+*Return: An int
+*/
+
+int case_b(u_int i)
+{
+	char *digits;
+	int len = 0;
+
+	digits = base_convert(i, 2);
+	while (digits[len] != '\0')
+	{
+		_putchar(digits[len]);
+		len++;
+	}
+	return (len);
+}
+
+/**
+*case_u - handle unsigned ints
+*@j:Digit to print
+*Return: An Integer
+*/
+
+int case_u(u_int j)
+{
+	char *digits;
+	int len = 0;
+
+	digits = base_convert(j, 10);
+	while (digits[len] != '\0')
+	{
+		_putchar(digits[len]);
+		len++;
+	}
+	return (len);
+}
