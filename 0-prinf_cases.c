@@ -10,16 +10,14 @@ int case_c(int i)
 
 	len = _putchar(i);
 
-
 	return (len);
 }
 
 /**
 *case_c - handle base 10 digit printing
-*@i:Digit to print
+*@j:Digit to print
 *Return: An Integer
 */
-
 int case_d(int j)
 {
 	char *digits;
@@ -31,16 +29,16 @@ int case_d(int j)
 		_putchar('-');
 	}
 	digits = base_convert(j, 10);
-	puts(digits);
 	while (digits[len] != '\0')
 	{
+		_putchar(digits[len]);
 		len++;
 	}
 	return (len);
 }
 /**
 *case_i - handle integer printing
-*@i:Integer to print
+*@j:Integer to print
 *Return: An Int
 */
 int case_i(int j)
@@ -54,9 +52,9 @@ int case_i(int j)
                 _putchar('-');
         }
         digits = base_convert(j, 10);
-        puts(digits);
         while (digits[len] != '\0')
         {
+		_putchar(digits[len]);
                 len++;
         }
         return (len);
@@ -99,8 +97,9 @@ int case_x(u_int i)
 	int len = 0;
 
 	digits = base_convert(i, 16);
-	while (digits)
+	while (digits[len] != '\0')
 	{
+		_putchar(digits[len]);
 		len++;
 	}
 	puts(digits);
