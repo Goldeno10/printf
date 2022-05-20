@@ -20,10 +20,6 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == '\0')
 		return (-1);
 
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-
-
 	while(*format)
 	{
 		if (*format != '%' || *++format == '%')
@@ -43,6 +39,11 @@ int _printf(const char *format, ...)
 				case 's':
 					string = va_arg(arg, char*);
 					num_of_char += case_s(string);
+					break;
+
+				case '%':
+					j = va_arg(arg, int);
+					num_of_char += _putchar(37);
 					break;
 
 				case 'd':
