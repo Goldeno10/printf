@@ -35,13 +35,22 @@ int _printf(const char *format, ...)
 		{
 			case 'c':
 				j = va_arg(arg, int);
-				_putchar(j);
+				num_of_char += case_c(j);
 				break;
 
 			case 's':
 				string = va_arg(arg, char*);
-				num_of_char += print_str(string);
+				num_of_char += case_s(string);
 				break;
+			case 'd':
+				j = va_arg(arg, int);
+				num_of_char += case_d(j);
+				break;
+			case 'i':
+				j = va_arg(arg, int);
+				num_of_char += case_i(j);
+				break;
+
 		}
 	}
 
@@ -50,30 +59,3 @@ int _printf(const char *format, ...)
 
 }
 
-
-/**
-* print_str - prints string
-* @str: pointer to string
-* Return: number of characters printed
-*/
-int print_str(char *str)
-{
-
-	int i = 0, num_of_char = 0;
-	char *np;
-
-	if (str)
-	{
-		while (str[i] != '\0')
-		{
-			num_of_char += _putchar(str[i]);
-			i++;
-		}
-	}
-	else
-	{
-			np = "(nil)";
-			num_of_char += write(1, np, 5);
-	}
-	return (num_of_char);
-}
