@@ -8,7 +8,7 @@
 */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, j, num_of_char = 0;
+	u_int i = 0, j, num_of_char = 0;
 	va_list arg;
 	char *string;
 
@@ -52,8 +52,18 @@ int _printf(const char *format, ...)
 				j = va_arg(arg, int);
 				num_of_char += case_i(j);
 				break;
-
-
+			case 'o':
+				j = va_arg(arg, u_int);
+				num_of_char += case_o(j);
+				break;
+			case 'x':
+				j = va_arg(arg, u_int);
+				num_of_char += case_x(j);
+				break;
+			case 'X':
+				j = va_arg(arg, u_int);
+				num_of_char += case_X(j);
+				break;
 		}
 	}
 
