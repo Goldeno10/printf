@@ -1,6 +1,3 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
 #include "main.h"
 
 /**
@@ -42,6 +39,11 @@ int _printf(const char *format, ...)
 				string = va_arg(arg, char*);
 				num_of_char += case_s(string);
 				break;
+			case '%':
+				j = va_arg(arg, int);
+				num_of_char += _putchar(37);
+				break;
+
 			case 'd':
 				j = va_arg(arg, int);
 				num_of_char += case_d(j);
@@ -50,6 +52,7 @@ int _printf(const char *format, ...)
 				j = va_arg(arg, int);
 				num_of_char += case_i(j);
 				break;
+
 
 		}
 	}

@@ -25,10 +25,3 @@ int _putchar(char c);
 int print_str(char *str);
 
 #endif /* #endif MAIN_H  */
-
-
-
-
-
-
-
