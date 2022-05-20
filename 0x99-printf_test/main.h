@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -21,15 +20,5 @@ int case_i(int i);
 int case_d(int i);
 int case_s(char *s);
 
-int _putchar(char c);
-int _printf(const char *format, ...);
-int print_str(char *str);
 
 #endif /* #endif MAIN_H  */
-
-
-
-
-
-
-
