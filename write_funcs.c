@@ -20,9 +20,10 @@ int _putchar(char c)
 */
 int _puts(char *str)
 {
-	int i = 0;
+	int num_of_char = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
-		_putchar(str[i]);
-	return (i);
+	while (*str != '\0')
+		num_of_char += _putchar(*str++);
+
+	return (num_of_char);
 }
