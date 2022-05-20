@@ -102,7 +102,6 @@ int case_x(u_int i)
 		_putchar(digits[len]);
 		len++;
 	}
-	puts(digits);
 	return (len);
 }
 /**
@@ -116,11 +115,31 @@ int case_o(u_int i)
 	char *digits;
 	int len = 0;
 
-	digits = base_convert(i, 10);
-	while (digits)
+	digits = base_convert(i, 8);
+	while (digits[len] != '\0')
 	{
+		_putchar(digits[len]);
 		len++;
 	}
-	puts(digits);
+	return (len);
+}
+
+
+/**
+*case_X - Hexadeximal case
+*@i: input data
+*Return: An int
+*/
+int case_X(u_int i)
+{
+	char *digits;
+	int len = 0;
+
+	digits = base_CONVERT(i, 16);
+	while (digits[len] != '\0')
+	{
+		_putchar(digits[len]);
+		len++;
+	}
 	return (len);
 }
