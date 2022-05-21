@@ -15,7 +15,6 @@ int _putchar(char c)
 	if (buf[i])
 	{
 		write(1, &buf[i], 1);
-		printf("Hello, this program uses buffer\n");
 	}
 	else
 	{
