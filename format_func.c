@@ -13,7 +13,13 @@ int vfmt(const char *format, va_list ap)
 	unsigned int c;
 	int num = 0;
 	int (*cvt)(va_list);
+	
+	if (!format)
+		return (-1);
 
+	if (format[0] == '%' && format[1] == '\0')
+					return (-1);
+	
 	while (*format)
 	{
 		if (*format != '%' || *++format == '%')
