@@ -33,3 +33,35 @@ int cvt_s(va_list ap)
 
 	return (num_of_char);
 }
+
+/**
+*cvt_d - handle base 10 digit printing
+*@ap:Stoe arguments list
+*Return: An Integer
+*/
+
+int cvt_d(va_list ap)
+{
+	int num_of_char;
+	int decimal_num = va_arg(ap, int);
+	char *digits;
+
+	if (decimal_num < 0)
+	{
+		decimal_num = - decimal_num;
+		_putchar('-');
+	}
+	digits = base_convert(decimal_num, 10);
+	num_of_char = _puts(digits);
+	return (num_of_char);
+}
+/**
+*cvt_i - handle intigers printing
+*@ap:Stoe arguments list
+*Return: An Integer
+*/
+
+int cvt_i(va_list ap)
+{
+	return (cvt_d(ap));
+}
