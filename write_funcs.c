@@ -5,11 +5,24 @@
 * _putchar - writes the character c to stdout
 * @c: The character to print
 * Return: On success 1.
-* On error, -1 is returned, and errno is set appropriately.
+* On error, -1 is returned
 */
 int _putchar(char c)
 {
-		return (write(1, &c, 1));
+	static char buf[1024];
+	int i = (int)c;
+
+	if (buf[i])
+	{
+		write(1, &buf[i], 1);
+		printf("Hello, this program uses buffer\n");
+	}
+	else
+	{
+		buf[i] = c;
+		write(1, &buf[i], 1);
+	}
+	return (1);
 }
 
 
