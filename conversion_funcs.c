@@ -76,3 +76,19 @@ int cvt_i(va_list ap)
 	num_of_char +=  _puts(digits);
 	return (num_of_char);
 }
+/**
+* cvt_b - handle binary printing
+* @ap: Store arguments list
+* Return: number of characters printed
+*/
+
+int cvt_b(va_list ap)
+{
+	int num_of_char = 0;
+	int decimal_num = va_arg(ap, int);
+	char *digits;
+
+	digits = base_convert(decimal_num, 2);
+	num_of_char +=  _puts(digits);
+	return (num_of_char);
+}
