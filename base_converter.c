@@ -9,18 +9,17 @@
 
 char *base_convert(u_int num, int base)
 {
-	static char base_char[] = "0123456789abcdef";
+	static const char base_char[] = "0123456789abcdef";
 	static char buffer[50];
 	char *ptr;
 
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do
-	{
+	do {
 		*--ptr = base_char[num % base];
 		num /= base;
-	}while(num != 0);
+	} while (num != 0);
 
 	return (ptr);
 }
@@ -34,18 +33,17 @@ char *base_convert(u_int num, int base)
 
 char *base_CONVERT(u_int num, int base)
 {
-	static char base_char[] = "0123456789ABCDEF";
+	static const char base_char[] = "0123456789ABCDEF";
 	static char buffer[50];
 	char *ptr;
 
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do
-	{
+	do {
 		*--ptr = base_char[num % base];
 		num /= base;
-	}while(num != 0);
+	} while (num != 0);
 
 	return (ptr);
 }
