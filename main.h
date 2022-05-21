@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/* Prinf Function */
 int _printf(const char *format, ...);
 
 /**
