@@ -35,33 +35,44 @@ int cvt_s(va_list ap)
 }
 
 /**
-*cvt_d - handle base 10 digit printing
-*@ap:Stoe arguments list
-*Return: An Integer
+* cvt_d - handle base 10 digit printing
+* @ap:Stoe arguments list
+* Return: number of characters printed
 */
 
 int cvt_d(va_list ap)
 {
-	int num_of_char;
+	int num_of_char = 0;
 	int decimal_num = va_arg(ap, int);
 	char *digits;
 
 	if (decimal_num < 0)
 	{
-		decimal_num = - decimal_num;
-		_putchar('-');
+		decimal_num = -decimal_num;
+		num_of_char += _putchar('-');
 	}
 	digits = base_convert(decimal_num, 10);
-	num_of_char = _puts(digits);
+	num_of_char +=  _puts(digits);
 	return (num_of_char);
 }
 /**
-*cvt_i - handle intigers printing
-*@ap:Stoe arguments list
-*Return: An Integer
+* cvt_i - handle integers printing
+* @ap: Store arguments list
+* Return: number of characters printed
 */
 
 int cvt_i(va_list ap)
 {
-	return (cvt_d(ap));
+	int num_of_char = 0;
+	int decimal_num = va_arg(ap, int);
+	char *digits;
+
+	if (decimal_num < 0)
+	{
+		decimal_num = -decimal_num;
+		num_of_char += _putchar('-');
+	}
+	digits = base_convert(decimal_num, 10);
+	num_of_char +=  _puts(digits);
+	return (num_of_char);
 }
