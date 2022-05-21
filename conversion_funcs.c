@@ -92,3 +92,4 @@ int cvt_b(va_list ap)
 	num_of_char +=  _puts(digits);
 	return (num_of_char);
 }
+
