@@ -18,7 +18,11 @@ int vfmt(const char *format, va_list ap)
 		return (-1);
 
 	if (format[0] == '%' && format[1] == '\0')
-					return (-1);
+
+
+
+		return (-1);
+
 
 	while (*format)
 	{
