@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+
 /* Prinf Function */
 int _printf(const char *format, ...);
 
@@ -43,6 +44,7 @@ int cvt_c(va_list ap);
 int cvt_i(va_list ap);
 int cvt_d(va_list ap);
 int cvt_s(va_list ap);
+int cvt_p(va_list ap);
 
 /* write functions */
 int _putchar(char c);
