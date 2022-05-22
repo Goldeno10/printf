@@ -12,17 +12,26 @@
 */
 int cvt_S(va_list ap)
 {
-	unsigned int i = 0, num_of_char = 0;
+	unsigned int i = 0, num_of_char = 0, num;
 	char *code, *str = va_arg(ap, char *);
 
 	while (*str != '\0')
 	{
-		if (*str > 0 && *str < 32 || *str >= 127)
+		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
-			num_of_char += _puts("\x");
-			code = base_CONVERT(c, 16);
+			num_of_char += _puts("\\x");
+			num = (int)*str;
+
+			if (num <= 16)
+				num_of_char += _putchar('0');
+
+			code = base_CONVERT(num, 16);
 			while (i < 2)
-				num_of_char += _putchar(code[i++]);
+			{
+				num_of_char += _putchar(code[i]);
+				i++;
+			}
+
 		}
 		else
 		{
