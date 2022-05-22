@@ -13,6 +13,7 @@
 int cvt_S(va_list ap)
 {
 	unsigned int i = 0, num_of_char = 0, num;
+	unsigned int n = 2;
 	char *code, *str = va_arg(ap, char *);
 
 	while (*str != '\0')
@@ -23,10 +24,13 @@ int cvt_S(va_list ap)
 			num = (int)*str;
 
 			if (num <= 16)
+			{
 				num_of_char += _putchar('0');
+				n = 1;
+			}
 
 			code = base_CONVERT(num, 16);
-			while (i < 2)
+			while (i < n)
 			{
 				num_of_char += _putchar(code[i]);
 				i++;
