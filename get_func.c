@@ -28,6 +28,7 @@ int (*get_cvt_func(char s))(va_list)
 		int i;
 
 		i = 0;
+
 		while (i < 11)
 		{
 			if (*(cvts[i].cvt) == s)
