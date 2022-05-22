@@ -21,13 +21,14 @@ int (*get_cvt_func(char s))(va_list)
 			{"o", cvt_o},
 			{"x", cvt_x},
 			{"X", cvt_X},
+			{"S", cvt_S},
 			{NULL, NULL}
 		};
 
 		int i;
 
 		i = 0;
-		while (i < 9)
+		while (i < 11)
 		{
 			if (*(cvts[i].cvt) == s)
 				return (cvts[i].f);
