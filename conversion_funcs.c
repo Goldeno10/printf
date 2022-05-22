@@ -34,6 +34,7 @@ int cvt_s(va_list ap)
 	return (num_of_char);
 }
 
+
 /**
 * cvt_d - handle base 10 digit printing
 * @ap:Stoe arguments list
@@ -55,6 +56,7 @@ int cvt_d(va_list ap)
 	num_of_char +=  _puts(digits);
 	return (num_of_char);
 }
+
 /**
 * cvt_i - handle integers printing
 * @ap: Store arguments list
@@ -76,6 +78,7 @@ int cvt_i(va_list ap)
 	num_of_char +=  _puts(digits);
 	return (num_of_char);
 }
+
 /**
 * cvt_b - handle binary printing
 * @ap: Store arguments list
