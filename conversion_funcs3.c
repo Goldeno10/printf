@@ -16,32 +16,36 @@ int cvt_S(va_list ap)
 	unsigned int n = 2;
 	char *code, *str = va_arg(ap, char *);
 
-	while (*str != '\0')
+	if (!str)
+		num_of_char += _puts("(null");
+	else
 	{
-		if ((*str > 0 && *str < 32) || *str >= 127)
+		while (*str != '\0')
 		{
-			num_of_char += _puts("\\x");
-			num = (int)*str;
-
-			if (num <= 16)
+			if ((*str > 0 && *str < 32) || *str >= 127)
 			{
-				num_of_char += _putchar('0');
-				n = 1;
-			}
+				num_of_char += _puts("\\x");
+				num = (int)*str;
 
-			code = base_CONVERT(num, 16);
-			while (i < n)
+				if (num <= 16)
+				{
+					num_of_char += _putchar('0');
+					n = 1;
+				}
+
+				code = base_CONVERT(num, 16);
+				while (i < n)
+				{
+					num_of_char += _putchar(code[i]);
+					i++;
+				}
+			}
+			else
 			{
-				num_of_char += _putchar(code[i]);
-				i++;
+				num_of_char += _putchar(*str);
 			}
-
+			str++;
 		}
-		else
-		{
-			num_of_char += _putchar(*str);
-		}
-		str++;
 	}
-	return (num_of_char);
+		return (num_of_char);
 }
