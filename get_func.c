@@ -9,7 +9,7 @@
 * Return: return a pointer to the function that takes variable
 * argument list and return int
  */
-int (*get_cvt_func(char s))(va_list)
+int (*get_cvt_func(char s))(va_list, unsigned char [], int, int)
 {
 		cvt_t cvts[] = {
 			{"c", cvt_c},
@@ -22,6 +22,7 @@ int (*get_cvt_func(char s))(va_list)
 			{"x", cvt_x},
 			{"X", cvt_X},
 			{"S", cvt_S},
+			{"p", cvt_p},
 			{NULL, NULL}
 		};
 

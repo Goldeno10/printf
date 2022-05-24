@@ -8,44 +8,41 @@
 * printed this way: \x, followed by the ASCII code value in hexadecimal
 * (upper case - always 2 characters)
 * @ap: stores argument list
+* @flags: pointer to flags in the format string
+* @width: width given in the format string
+* @precision: precision given in the format string
 * Return: number of characters printed
 */
-int cvt_S(va_list ap)
+int cvt_S(va_list ap, unsigned char flags[], int width, int precision)
 {
-	unsigned int i = 0, num_of_char = 0, num;
-	unsigned int n = 2;
-	char *code, *str = va_arg(ap, char *);
+	int num_of_char = 0;
+	char *str = va_arg(ap, char *);
 
 	if (!str)
-		num_of_char += _puts("(null");
+		num_of_char += puts("(null)");
 	else
 	{
-		while (*str != '\0')
-		{
-			if ((*str > 0 && *str < 32) || *str >= 127)
-			{
-				num_of_char += _puts("\\x");
-				num = (int)*str;
-
-				if (num <= 16)
-				{
-					num_of_char += _putchar('0');
-					n = 1;
-				}
-
-				code = base_CONVERT(num, 16);
-				while (i < n)
-				{
-					num_of_char += _putchar(code[i]);
-					i++;
-				}
-			}
-			else
-			{
-				num_of_char += _putchar(*str);
-			}
-			str++;
-		}
+		num_of_char += _puts(str, flags, width, precision);
 	}
-		return (num_of_char);
+	return (num_of_char);
+}
+
+
+/**
+* cvt_p - prints pointer as hexadecimal
+* @ap: stores argument list
+* @flags: pointer to flags in the format string
+* @width: width given in the format string
+* @precision: precision given in the format string
+* Return: number of characters printed
+*/
+int cvt_p(va_list ap, unsigned char flags[], int width, int precision)
+{
+	unsigned long decimal_num = (unsigned long)va_arg(ap, void *);
+	int num_of_char = 0;
+	char *digits;
+
+	digits = base_convert(decimal_num, 16);
+	num_of_char += _putd(digits, flags, width, precision);
+	return (num_of_char);
 }
