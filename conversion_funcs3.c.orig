@@ -10,6 +10,7 @@
 * @precision: precision given in the format string
 * Return: number of characters printed
 */
+<<<<<<< HEAD
 int cvt_S(va_list ap, unsigned char flags[], int width, int precision)
 {
 	int num_of_char = 0;
@@ -41,6 +42,32 @@ int cvt_p(va_list ap, unsigned char flags[], int width, int precision)
 
 	digits = base_convert(decimal_num, 16);
 	num_of_char += _putd(digits, flags, width, precision);
+=======
 
+int cvt_S(va_list ap)
+{
+	char *str = va_arg(ap, char *);
+	int num_of_char = 0;
+	char *hex;
+
+	for (; *str; str++)
+	{
+		if ((*str > 0 && *str < 32) || *str >= 127)
+		{
+			hex = base_CONVERT(*str, 16);
+			num_of_char += _puts("\\x");
+			if (!hex[1])
+			{
+				num_of_char += _putchar('0');
+			}
+			num_of_char += _puts(hex);
+		}
+		else
+		{
+			num_of_char += _putchar(*str);
+		}
+	}
+
+>>>>>>> 050b1b3a2d0e09c74f9e4a54a370f761595643f3
 	return (num_of_char);
 }
